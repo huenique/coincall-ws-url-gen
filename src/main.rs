@@ -46,24 +46,14 @@ fn get_command_line_args() -> (String, String, Option<String>) {
         .version("1.0")
         .author("Your Name <your.email@example.com>")
         .about("Generates a WebSocket URL for Coincall API")
-        .arg(
-            Arg::new("api_key")
-                .help("API key")
-                .required(true)
-                .value_name("API_KEY"),
-        )
+        .arg(Arg::new("api_key").help("API key").required(true).index(1))
         .arg(
             Arg::new("api_secret")
                 .help("API secret")
                 .required(true)
-                .value_name("API_SECRET"),
+                .index(2),
         )
-        .arg(
-            Arg::new("uuid")
-                .help("UUID")
-                .required(false)
-                .value_name("UUID"),
-        )
+        .arg(Arg::new("uuid").help("UUID").required(false).index(3))
         .get_matches();
 
     let api_key = matches.get_one::<String>("api_key").unwrap().to_string();
