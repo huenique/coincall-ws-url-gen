@@ -1,0 +1,10 @@
+[package]
+name = "coincall-ws-url-gen"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = "4.5.14"
+hex = "0.4.3"
+hmac = "0.12.1"
+sha2 = "0.10.8"
